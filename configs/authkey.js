@@ -1,0 +1,1 @@
+exports.authKey = '<bookRental-ApplicationKeywith-codeGrow>'
