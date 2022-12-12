@@ -6,20 +6,22 @@ const key = require('../configs/authkey')
 const userModel = require('../model/user.model');
 let id = Math.random()*10000
 exports.regester = async (req,res)=>{
-     const data = {
-        name:req.body.name,
-         id:id,
-        password:bcrypt.hashSync(req.body.password,10),
-        userType:req.body.userType,
-        haveBools:req.body.haveBools,
-        email:req.body.email
-     }
-     if(!filedChecks(req.body)){
+    if(!filedChecks(req.body)){
         return res.status(404).send({
             message:"some information needed please fill it!",
             success:false
         });
      }
+     const data = {
+        name:req.body.name,
+         id:id,
+        userType:req.body.userType,
+        haveBooks:req.body.haveBooks,
+        email:req.body.email
+     }
+    
+     data.password = bcrypt.hashSync(req.body.password,10);
+
      try{
            const user =await userModels.create(data);
            return res.status(201).send({
