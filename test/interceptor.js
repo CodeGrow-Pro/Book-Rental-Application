@@ -1,11 +1,11 @@
-exports.mockRequest = ()=>{
+exports.mockRequest = () => {
     const req = {}
-     req.body = jest.fn().mockReturnValue(req);
-     req.params = jest.fn().mockReturnValue(req);
-     req.query = jest.fn().mockReturnValue(req);
-     return req;
+    req.body = jest.fn().mockReturnValue(req);
+    req.params = jest.fn().mockReturnValue(req);
+    req.query = jest.fn().mockReturnValue(req);
+    return req;
 }
-exports.mockResponse = ()=>{
+exports.mockResponse = () => {
     const res = {};
     res.status = jest.fn().mockReturnValue(res);
     res.body = jest.fn().mockReturnValue(res);

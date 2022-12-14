@@ -18,8 +18,8 @@ exports.bookRegister = async (req, res) => {
         }
         const saved = await bookModel.create(createdata);
         return res.status(200).send({
-            message:"book register successfully",
-            bookSummary:saved
+            message: "book register successfully",
+            bookSummary: saved
         })
     } catch (err) {
         console.log(err.message);
@@ -77,10 +77,10 @@ exports.findAllbooksorByisbn = async (req, res) => {
     if (isbn) {
         find.isbn = req.query.isbn
     }
-    if(bookname){
+    if (bookname) {
         find.name = bookname
     }
-    if(id){
+    if (id) {
         find._id = id;
     }
     try {

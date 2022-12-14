@@ -195,7 +195,7 @@ describe("search user testing!", () => {
         const req = mockRequest();
         const res = mockResponse();
         req.query = {
-           name:"test"
+            name: "test"
         }
         const userSpy = jest.spyOn(userModel, 'find').mockReturnValue(Promise.resolve([userPayload]));
         const converts = jest.spyOn(convert, 'userConverter').mockReturnValue([userPayload])
@@ -223,7 +223,7 @@ describe("search user testing!", () => {
         const req = mockRequest();
         const res = mockResponse();
         req.query = {
-           email:"test@gmail.com"
+            email: "test@gmail.com"
         }
         const userSpy = jest.spyOn(userModel, 'find').mockReturnValue(Promise.resolve([userPayload]));
         const converts = jest.spyOn(convert, 'userConverter').mockReturnValue([userPayload])
@@ -251,7 +251,7 @@ describe("search user testing!", () => {
         const req = mockRequest();
         const res = mockResponse();
         req.query = {
-           type:"student"
+            type: "student"
         }
         const userSpy = jest.spyOn(userModel, 'find').mockReturnValue(Promise.resolve([userPayload]));
         const converts = jest.spyOn(convert, 'userConverter').mockReturnValue([userPayload])
@@ -279,7 +279,7 @@ describe("search user testing!", () => {
         const req = mockRequest();
         const res = mockResponse();
         req.query = {
-           name:"test"
+            name: "test"
         }
         const userSpy = jest.spyOn(userModel, 'find').mockReturnValue(Promise.reject("error occuring"));
         const converts = jest.spyOn(convert, 'userConverter').mockReturnValue([userPayload])
@@ -289,8 +289,8 @@ describe("search user testing!", () => {
         expect(res.status).toHaveBeenCalledWith(500)
         expect(res.send).toHaveBeenCalledWith(
             expect.objectContaining({
-                message:"Internal server error!",
-                success:false
+                message: "Internal server error!",
+                success: false
             })
         )
     })
